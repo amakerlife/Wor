@@ -49,28 +49,9 @@ int main()
 //	freopen(".out","w",stdout);
 //	fstream file;
 //	file.open("words.txt");
-	/*--------------------------------------------------------------------------*/
-			system("title M Words Book 单词本 v1.1.4 - 正在初始化");
-			system("cls");
-			cout<<"正在初始化 已完成 20%\n";
-			system("echo off");
-			system("md C:\\Users\\%USERNAME%\\AppData\\Roaming\\MWordsBook");
-			system("cls");
-			cout<<"正在初始化 已完成 40%\n";
-			system("copy .\\Lab114.a C:\\Users\\%USERNAME%\\AppData\\Roaming\\MWordsBook");
-			system("cls");
-			cout<<"正在初始化 已完成 60%\n";
-			system("del .\\Lab114.a");
-			system("cls");
-			cout<<"正在初始化 已完成 80%\n";
-			system("ren C:\\Users\\%USERNAME%\\AppData\\Roaming\\MWordsBook\\Lab114.a Lab114.exe");
-			system("cls");
-			cout<<"正在初始化 已完成 100%\n";
-			system("cls");
-	/*--------------------------------------------------------------------------*/
 	memset(jieguo,1,sizeof(jieguo));
-	system("title M Words Book 单词本 v1.1.4   By Makerlife");
-	cout<<"欢迎使用 M Words Book 单词本实验室版本\n版本 v1.1.4"<<endl;
+	system("title M Words Book 单词本 v1.1.4 - Lab   By Makerlife");
+	cout<<"欢迎使用 M Words Book 单词本实验室版本\n版本 v1.1.4 - Lab\n实验室功能可能会不稳定"<<endl;
 	cout<<"本程序由 Makerlife 开发"<<endl;
 	cout<<"您可以访问下方网址进行更新"<<endl;
 	cout<<"https://amakerlife.github.io/MWB"<<endl;
@@ -91,7 +72,23 @@ int main()
 	for(int i=2;i<=3*n+1;i++)
 	{
 		if(i%3==2) getline(cin,word[(i+1)/3]);/*file>>word[(i+1)/3];cin>>word[(i+1)/3];*/
-		if(i%3==0) getline(cin,cx[i/3]);/*file>>word[i/3];cin>>cx[i/3];*/
+		if(i%3==0)
+		{
+			string tmpcx;
+			getline(cin,tmpcx);
+			if(!((tmpcx[0]>='a' && tmpcx[0]<='z') || (tmpcx[0]>='A' && tmpcx[0]<='Z')))
+			{
+				cx[i/3]=' ';
+				zw[i/3]=tmpcx;
+				i++;
+				continue;
+			}
+			else
+			{
+				cx[i/3]=tmpcx;
+			}
+//			getline(cin,cx[i/3]);/*file>>word[i/3];cin>>cx[i/3];*/
+		}
 		if(i%3==1) getline(cin,zw[(i-1)/3]);/*file>>word[(i-1)/3];cin>>zw[(i-1)/3];*/
 	}
 //	fclose;
@@ -213,10 +210,16 @@ int main()
 		}
 		cout<<" 的释义（请输入大写字母）："<<endl;
 		el;
-		cout<<"A "<<cx[t1]<<" "<<zw[t1]<<endl;
-		cout<<"B "<<cx[t2]<<" "<<zw[t2]<<endl;
-		cout<<"C "<<cx[t3]<<" "<<zw[t3]<<endl;
-		cout<<"D "<<cx[t4]<<" "<<zw[t4]<<endl;
+		if(cx[t1]==" ") cout<<"A "<<zw[t1]<<endl;
+		else cout<<"A "<<cx[t1]<<" "<<zw[t1]<<endl;
+		if(cx[t2]==" ") cout<<"B "<<zw[t2]<<endl;
+		else cout<<"B "<<cx[t2]<<" "<<zw[t2]<<endl;
+		if(cx[t3]==" ") cout<<"C "<<zw[t3]<<endl;
+		else cout<<"C "<<cx[t3]<<" "<<zw[t3]<<endl;
+		if(cx[t4]==" ") cout<<"D "<<zw[t4]<<endl;
+		else cout<<"D "<<cx[t4]<<" "<<zw[t4]<<endl;
+//		cout<<"C "<<cx[t3]<<" "<<zw[t3]<<endl;
+//		cout<<"D "<<cx[t4]<<" "<<zw[t4]<<endl;
 
 //		cout<<char(sj+'A'-1)<<endl;
 
