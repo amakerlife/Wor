@@ -50,20 +50,20 @@ int main()
 //	fstream file;
 //	file.open("words.txt");
 	memset(jieguo,1,sizeof(jieguo));
-	system("title M Words Book µ¥´Ê±¾ v1.1.4 - Lab   By Makerlife");
-	cout<<"»¶Ó­Ê¹ÓÃ M Words Book µ¥´Ê±¾ÊµÑéÊÒ°æ±¾\n°æ±¾ v1.1.4 - Lab\nÊµÑéÊÒ¹¦ÄÜ¿ÉÄÜ»á²»ÎÈ¶¨"<<endl;
-	cout<<"±¾³ÌÐòÓÉ Makerlife ¿ª·¢"<<endl;
-	cout<<"Äú¿ÉÒÔ·ÃÎÊÏÂ·½ÍøÖ·½øÐÐ¸üÐÂ"<<endl;
+	system("title M Words Book å•è¯æœ¬ v1.1.4 - Lab   By Makerlife");
+	cout<<"æ¬¢è¿Žä½¿ç”¨ M Words Book å•è¯æœ¬å®žéªŒå®¤ç‰ˆæœ¬\nç‰ˆæœ¬ v1.1.4 - Lab\nå®žéªŒå®¤åŠŸèƒ½å¯èƒ½ä¼šä¸ç¨³å®š"<<endl;
+	cout<<"æœ¬ç¨‹åºç”± Makerlife å¼€å‘"<<endl;
+	cout<<"æ‚¨å¯ä»¥è®¿é—®ä¸‹æ–¹ç½‘å€è¿›è¡Œæ›´æ–°"<<endl;
 	cout<<"https://amakerlife.github.io/MWB"<<endl;
-	cout<<"Çë¶ÁÈëµ¥´Ê£¨¶ÁÈë¸ñÊ½Çë¼û Read Me.md£©£º"<<endl;
+	cout<<"è¯·è¯»å…¥å•è¯ï¼ˆè¯»å…¥æ ¼å¼è¯·è§ Read Me.mdï¼‰ï¼š"<<endl;
 	srand((int)time(0));
 //	file>>n;
 	n=read();
 	int tn=n;
 	if(n<4)
 	{
-		cout<<"´íÎó: µ¥´ÊÊýÁ¿²»ÄÜÐ¡ÓÚ4\nÈçÓÐÆäËûÒÉ»óÇëÑ¯ÎÊ¿ª·¢ÈËÔ±"<<endl;
-		cout<<"Çë°´»Ø³µÍË³ö......"<<endl;
+		cout<<"é”™è¯¯: å•è¯æ•°é‡ä¸èƒ½å°äºŽ4\nå¦‚æœ‰å…¶ä»–ç–‘æƒ‘è¯·è¯¢é—®å¼€å‘äººå‘˜"<<endl;
+		cout<<"è¯·æŒ‰å›žè½¦é€€å‡º......"<<endl;
 		char ch=getchar();
 		return 0;
 	}
@@ -93,16 +93,16 @@ int main()
 	}
 //	fclose;
 	el;
-	cout<<"¶ÁÈë³É¹¦"<<endl;//ÊäÈëµ¥´Ê±í
+	cout<<"è¯»å…¥æˆåŠŸ"<<endl;//è¾“å…¥å•è¯è¡¨
 	usleep(500000);
 	system("cls");
-	cout<<"ÇëÊäÈëÒª±³ËÐµÄµ¥´ÊÊýÁ¿: ";
+	cout<<"è¯·è¾“å…¥è¦èƒŒè¯µçš„å•è¯æ•°é‡: ";
 	int m;
 	m=read();
 	if(m>n)
 	{
-		cout<<"´íÎó: ÌâÄ¿ÊýÁ¿²»ÄÜ´óÓÚµ¥´ÊÊýÁ¿\nÈçÓÐÆäËûÒÉ»óÇëÑ¯ÎÊ¿ª·¢ÈËÔ±"<<endl;
-		cout<<"Çë°´»Ø³µÍË³ö......"<<endl;
+		cout<<"é”™è¯¯: é¢˜ç›®æ•°é‡ä¸èƒ½å¤§äºŽå•è¯æ•°é‡\nå¦‚æœ‰å…¶ä»–ç–‘æƒ‘è¯·è¯¢é—®å¼€å‘äººå‘˜"<<endl;
+		cout<<"è¯·æŒ‰å›žè½¦é€€å‡º......"<<endl;
 		char ch=getchar();
 		return 0;
 	}
@@ -114,12 +114,12 @@ int main()
 	}
 //	cout<<t[1]<<endl;
 //	t[0]=rand()%n+1;
-	for(int i=0;i<m;)//³öÌâ
+	for(int i=0;i<m;)//å‡ºé¢˜
 	{
-		cout<<"ÒÑ´ð¶Ô "<<i<<"/"<<m<<" ¸öµ¥´Ê"<<endl;
-        cout<<"ÇëÑ¡Ôñµ¥´Ê ";
+		cout<<"å·²ç­”å¯¹ "<<i<<"/"<<m<<" ä¸ªå•è¯"<<endl;
+        cout<<"è¯·é€‰æ‹©å•è¯ ";
 //		t[i]=rand()%n+1;
-		while(1)//È·±£ÓëÖ®Ç°µÄÌâÄ¿²»ÖØ¸´
+		while(1)//ç¡®ä¿ä¸Žä¹‹å‰çš„é¢˜ç›®ä¸é‡å¤
 		{
 			int f=0;
 			for(int j=0;j<i;j++)
@@ -136,11 +136,11 @@ int main()
 		cout<<word[t[i]];
 		int t1,t2,t3,t4;
 		int sj=rand()%4+1;
-		t1=rand()%n+1;//Éú³ÉABCDÑ¡Ïî
+		t1=rand()%n+1;//ç”ŸæˆABCDé€‰é¡¹
 		t2=rand()%n+1;
 		t3=rand()%n+1;
 		t4=rand()%n+1;
-		if(sj==1)//È·±£Ñ¡Ïî²»ÖØ¸´
+		if(sj==1)//ç¡®ä¿é€‰é¡¹ä¸é‡å¤
 		{
 			t1=t[i];
 			while(t1==t2 || t1==t3 || t1==t4 || t2==t3 || t2==t4 || t3==t4)
@@ -208,7 +208,7 @@ int main()
 
 			}
 		}
-		cout<<" µÄÊÍÒå£¨ÇëÊäÈë´óÐ´×ÖÄ¸£©£º"<<endl;
+		cout<<" çš„é‡Šä¹‰ï¼ˆè¯·è¾“å…¥å¤§å†™å­—æ¯ï¼‰ï¼š"<<endl;
 		el;
 		if(cx[t1]==" ") cout<<"A "<<zw[t1]<<endl;
 		else cout<<"A "<<cx[t1]<<" "<<zw[t1]<<endl;
@@ -224,17 +224,17 @@ int main()
 //		cout<<char(sj+'A'-1)<<endl;
 
 		char input;
-		cin>>input;//ÊäÈëÑ¡Ïî
+		cin>>input;//è¾“å…¥é€‰é¡¹
 		if(input==char(sj+'A'-1))
 		{
-			cout<<"»Ø´ðÕýÈ·£¡"<<endl;
+			cout<<"å›žç­”æ­£ç¡®ï¼"<<endl;
 			i++;
 			if(jieguo[i]!=0) jieguo[i]=1;
 			system("TIMEOUT /T 1");
 		}
 		else
 		{
-			cout<<"»Ø´ð´íÎó£¡"<<endl;
+			cout<<"å›žç­”é”™è¯¯ï¼"<<endl;
 			cout<<word[t[i]]<<" "<<cx[t[i]]<<" "<<zw[t[i]]<<endl;
 			jieguo[i]=0;
 			system("pause");
@@ -250,7 +250,7 @@ int main()
 	}
 	if(cwgs!=0)
 	{
-		cout<<"ÒÔÏÂ "<<cwgs<<" ¸öµ¥´Ê»¹ÐèÒª¼ÓÇ¿¼ÇÒä£º\n\n";
+		cout<<"ä»¥ä¸‹ "<<cwgs<<" ä¸ªå•è¯è¿˜éœ€è¦åŠ å¼ºè®°å¿†ï¼š\n\n";
 		for(int i=0;i<m;i++)
 		{
 			if(jieguo[i]==0)
@@ -262,7 +262,7 @@ int main()
 	}
 	if(cwgs!=m)
 	{
-		cout<<"ÒÔÏÂ "<<m-cwgs<<" ¸öµ¥´ÊÕÆÎÕµÄ²»´í£º\n\n";
+		cout<<"ä»¥ä¸‹ "<<m-cwgs<<" ä¸ªå•è¯æŽŒæ¡çš„ä¸é”™ï¼š\n\n";
 		for(int i=0;i<m;i++)
 		{
 			if(jieguo[i]!=0)
@@ -272,7 +272,7 @@ int main()
 		}
 		cout<<"\n\n";
 	}
-	cout<<"Çë°´»Ø³µÍË³ö......"<<endl;
+	cout<<"è¯·æŒ‰å›žè½¦é€€å‡º......"<<endl;
 	char ch=getchar();
 	ch=getchar();
 	return 0;
