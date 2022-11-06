@@ -54,20 +54,20 @@ int main()
 //	fstream file;
 //	file.open("words.txt");
 	memset(jieguo,1,sizeof(jieguo));
-	system("title M Words Book v1.3.0   By Makerlife");
-	cout<<"Welcome to M Words Book\nVersion 1.3.0"<<endl;
-	cout<<"Developed by Makerlife"<<endl;
-	cout<<"You can visit the following URL to find the latest release"<<endl;
-	cout<<"https://mtools.makerlife.tk/M-Words-Book.zip"<<endl;
-	cout<<"Please enter words: (You can find the style in Read Me.md)："<<endl;
+	system("title M Words Book 单词本 v1.3.1   By Makerlife");
+	cout<<"欢迎使用 M Words Book 单词本\n版本 v1.3.1"<<endl;
+	cout<<"本程序由 Makerlife 开发"<<endl;
+	cout<<"您可以使用 update.exe 进行更新"<<endl;
+//	cout<<"https://mtools.makerlife.tk/M-Words-Book.zip"<<endl;
+	cout<<"请读入单词（读入格式请见 Read Me.md）："<<endl;
 	srand((int)time(0));
 //	file>>n;
 	n=read();
 	int tn=n;
 	if(n<4)
 	{
-		cout<<"[Error] The number of words cannot be less than 4\ncode: 1"<<endl;
-		cout<<"Press Enter to Exit......"<<endl;
+		cout<<"错误: 单词数量不能小于 4\n错误码: 1"<<endl;
+		cout<<"请按回车退出......"<<endl;
 		char ch=getchar();
 		return 0;
 	}
@@ -97,17 +97,16 @@ int main()
 	}
 //	fclose;
 	el;
-	cout<<"Entered successfully"<<endl;//输入单词表
+	cout<<"读入成功"<<endl;//输入单词表
 	usleep(500000);
 	system("cls");
-	cout<<"Please enter the number of words that you want to learn: ";
+	cout<<"请输入要背诵的单词数量: ";
 	int m;
 	m=read();
 	if(m>n)
 	{
-		cout<<"[Error] The number of questions cannot be greater than the number of words!\ncode: 2"<<endl;
-//		cout<<"错误: 题目数量不能大于单词数量\n如有其他疑惑请询问开发人员"<<endl;
-		cout<<"Press Enter to Exit......"<<endl;
+		cout<<"错误: 题目数量不能大于单词数量\n错误码: 2"<<endl;
+		cout<<"请按回车退出......"<<endl;
 		char ch=getchar();
 		return 0;
 	}
@@ -120,15 +119,15 @@ int main()
 //	cout<<t[1]<<endl;
 //	t[0]=rand()%n+1;
 
-	cout<<"Enter 1 to select Chinese word meaning, enter other to select English word: ";
+	cout<<"输入 1 为选中文词义，输入其他为选择英语单词: ";
 	int tmppp=read();
 	system("cls");
 	if(tmppp==1)
 	{
 		for(int i=0;i<m;)//出题
 		{
-			cout<<i<<"/"<<m<<" words answered correctly"<<endl;
-	        cout<<"Please choose the meaning of ";
+			cout<<"已答对 "<<i<<"/"<<m<<" 个单词"<<endl;
+	        cout<<"请选择单词 ";
 	//		t[i]=rand()%n+1;
 			while(1)//确保与之前的题目不重复
 			{
@@ -219,6 +218,7 @@ int main()
 
 				}
 			}
+			cout<<" 的释义（请输入大写字母）："<<endl;
 			el;
 			if(cx[t1]==" ") cout<<"A "<<zw[t1]<<endl;
 			else cout<<"A "<<cx[t1]<<" "<<zw[t1]<<endl;
@@ -241,7 +241,7 @@ int main()
 			}
 			if(!('A'<=input && input<='D'))
 			{
-				cout<<"[Error] invalid input!\ncode: 3"<<endl;
+				cout<<"错误: 输入不合法\n错误码: 3"<<endl;
 				jieguo[i]=0;
 				system("pause");
 				system("cls");
@@ -249,14 +249,14 @@ int main()
 			}
 			if(input==char(sj+'A'-1))
 			{
-				cout<<"Answer correct!"<<endl;
+				cout<<"回答正确！"<<endl;
 				i++;
 				if(jieguo[i]!=0) jieguo[i]=1;
 				system("TIMEOUT /T 1");
 			}
 			else
 			{
-				cout<<"Wrong answer！"<<endl;
+				cout<<"回答错误！"<<endl;
 				cout<<word[t[i]]<<" "<<cx[t[i]]<<" "<<zw[t[i]]<<endl;
 				jieguo[i]=0;
 				system("pause");
@@ -272,7 +272,7 @@ int main()
 		}
 		if(cwgs!=0)
 		{
-			cout<<"The following "<<cwgs<<" words need to be memorized again: \n\n";
+			cout<<"以下 "<<cwgs<<" 个单词还需要加强记忆：\n\n";
 			for(int i=0;i<m;i++)
 			{
 				if(jieguo[i]==0)
@@ -284,7 +284,7 @@ int main()
 		}
 		if(cwgs!=m)
 		{
-			cout<<"The following "<<m-cwgs<<" words you have learned: \n\n";
+			cout<<"以下 "<<m-cwgs<<" 个单词掌握的不错：\n\n";
 			for(int i=0;i<m;i++)
 			{
 				if(jieguo[i]!=0)
@@ -294,7 +294,7 @@ int main()
 			}
 			cout<<"\n\n";
 		}
-		cout<<"Press Enter to Exit......"<<endl;
+		cout<<"请按回车退出......"<<endl;
 		char ch=getchar();
 		ch=getchar();
 		return 0;
@@ -303,8 +303,8 @@ int main()
 	{
 		for(int i=0;i<m;)//出题
 		{
-			cout<<i<<"/"<<m<<" words answered correctly"<<endl;
-	        cout<<"Please choose the meaning of ";
+			cout<<"已答对 "<<i<<"/"<<m<<" 个单词"<<endl;
+	        cout<<"请选择中文为 ";
 			while(1)//确保与之前的题目不重复
 			{
 				int f=0;
@@ -373,6 +373,7 @@ int main()
 					t1=rand()%n+1;
 				}
 			}
+			cout<<" 的单词（请输入大写字母）："<<endl;
 			el;
 			if(cx[t1]==" ") cout<<"A "<<word[t1]<<endl;
 			else cout<<"A "<<word[t1]<<" "<<cx[t1]<<endl;
@@ -395,7 +396,7 @@ int main()
 			}
 			if(!('A'<=input && input<='D'))
 			{
-				cout<<"[Error] invalid input!\ncode: 3"<<endl;
+				cout<<"错误: 输入不合法\n错误码: 3"<<endl;
 				jieguo[i]=0;
 				system("pause");
 				system("cls");
@@ -403,14 +404,14 @@ int main()
 			}
 			if(input==char(sj+'A'-1))
 			{
-				cout<<"Answer correct!"<<endl;
+				cout<<"回答正确！"<<endl;
 				i++;
 				if(jieguo[i]!=0) jieguo[i]=1;
 				system("TIMEOUT /T 1");
 			}
 			else
 			{
-				cout<<"Wrong answer!"<<endl;
+				cout<<"回答错误！"<<endl;
 				cout<<word[t[i]]<<" "<<cx[t[i]]<<" "<<zw[t[i]]<<endl;
 				jieguo[i]=0;
 				system("pause");
@@ -426,7 +427,7 @@ int main()
 		}
 		if(cwgs!=0)
 		{
-			cout<<"The following "<<cwgs<<" words need to be memorized again: \n\n";
+			cout<<"以下 "<<cwgs<<" 个单词还需要加强记忆：\n\n";
 			for(int i=0;i<m;i++)
 			{
 				if(jieguo[i]==0)
@@ -438,7 +439,7 @@ int main()
 		}
 		if(cwgs!=m)
 		{
-			cout<<"The following "<<m-cwgs<<" words you have learned: \n\n";
+			cout<<"以下 "<<m-cwgs<<" 个单词掌握的不错：\n\n";
 			for(int i=0;i<m;i++)
 			{
 				if(jieguo[i]!=0)
@@ -448,7 +449,7 @@ int main()
 			}
 			cout<<"\n\n";
 		}
-		cout<<"Press Enter to Exit......"<<endl;
+		cout<<"请按回车退出......"<<endl;
 		char ch=getchar();
 		ch=getchar();
 		return 0;
