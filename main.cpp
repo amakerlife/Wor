@@ -41,6 +41,10 @@ char changeb(char s)
 {
 	return (s-'a'+'A');
 }
+void init()
+{
+	system("update.exe");
+}
 const int N=1e3+10;
 int n;
 string word[N],cx[N],zw[N];
@@ -53,11 +57,12 @@ int main()
 //	freopen(".out","w",stdout);
 //	fstream file;
 //	file.open("words.txt");
+	init();
 	memset(jieguo,1,sizeof(jieguo));
-	system("title M Words Book 单词本 v1.3.2   By Makerlife");
-	cout<<"欢迎使用 M Words Book 单词本\n版本 v1.3.2"<<endl;
+	system("title M Words Book 单词本 v1.3.3   By Makerlife");
+	cout<<"欢迎使用 M Words Book 单词本\n版本 v1.3.3"<<endl;
 	cout<<"本程序由 Makerlife 开发"<<endl;
-	cout<<"您可以使用 update.exe 进行更新"<<endl;
+//	cout<<"您可以使用 update.exe 进行更新"<<endl;
 //	cout<<"https://mtools.makerlife.tk/M-Words-Book.zip"<<endl;
 	cout<<"请读入单词（读入格式请见 Read Me.md）："<<endl;
 	srand((int)time(0));
