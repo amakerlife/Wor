@@ -1,14 +1,27 @@
-欢迎使用 M Words Book！
-使用前请仔细阅读本说明
-强烈建议有 MarkDown 渲染器的同学阅读 Read Me.md 文件！
+<p align="center">
+<img src="https://mtools.makerlife.cf/icon.png" width="150">
+</p>
 
-## 0xff 题外话
+<h1 align="center">- M Words Book -</h1>
 
-~~这是作者因为英语单词过于混乱而开发的程序~~
+<p align="center">
+<img src="https://img.shields.io/github/v/release/amakerlife/M-Words-Book.svg">
+<img src="https://img.shields.io/github/downloads/amakerlife/M-Words-Book/total?label=Release%20Downloads">
+<img src="https://img.shields.io/badge/support-Windows-blue?logo=Windows">
+</p>
+
+A Simple, Open-Source, Command Line Words Book Tool
+
+---
+
+由于本项目目前仅支持中文，故不设置 English 版 README
+
+This project only support Simplified-Chinese now, so no English version README is set
+
 
 ## 0x01 使用方法
 
-打开程序后，按照提示使用即可。~~（不会有人连中文都看不懂吧啊喂）~~
+打开程序后，按照提示使用即可。
 
 ## 0x02 初始单词表格式
 
