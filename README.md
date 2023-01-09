@@ -6,6 +6,7 @@
 
 <p align="center">
 <img src="https://img.shields.io/github/v/release/amakerlife/M-Words-Book.svg">
+<img src="https://img.shields.io/github/license/Xhofe/alist" alt="License" />
 <img src="https://img.shields.io/github/downloads/amakerlife/M-Words-Book/total?label=Release%20Downloads">
 <img src="https://img.shields.io/badge/support-Windows-blue?logo=Windows">
 </p>
