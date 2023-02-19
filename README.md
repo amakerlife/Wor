@@ -2,7 +2,7 @@
 <img src="https://mtools.makerlife.cf/M-Words-Book/icon.png" width="150">
 </p>
 
-<h1 align="center">- M Words Book -</h1>
+<h1 align="center">- Wor -</h1>
 
 <p align="center">
 <img src="https://img.shields.io/github/v/release/amakerlife/M-Words-Book.svg">
