@@ -14,6 +14,7 @@
 #include<cstdlib>
 #include<unistd.h>
 #include<fstream>
+#include"wor.h"
 #define ll long long
 #define ull unsigned long long
 #define INF 0x7fffffff
@@ -46,43 +47,63 @@ void init()
 	system("update.exe");
 }
 const int N=1e3+10;
-int n;
+int n,n_lastwords;
 string word[N],cx[N],zw[N];
 int jieguo[N];
 int cwgs=0;
 int t[N];
 int main()
 {
-//	freopen("words.txt","r",stdin);
-//	freopen(".out","w",stdout);
-//	fstream file;
-//	file.open("words.txt");
-	system("title M Words Book µ•¥ ±æ v1.3.4   By Makerlife");
-	cout<<"’˝‘⁄ºÏ≤È∏¸–¬......"<<endl;
+	system("title Wor v1.3.5   By Makerlife");
+	cout<<"Ê≠£Âú®Ê£ÄÊü•Êõ¥Êñ∞......"<<endl;
 	init();
 	memset(jieguo,1,sizeof(jieguo));
 	system("cls");
-	cout<<"ª∂”≠ π”√ M Words Book µ•¥ ±æ\n∞Ê±æ v1.3.4"<<endl;
-	cout<<"±æ≥Ã–Ú”… Makerlife ø™∑¢"<<endl;
-//	cout<<"ƒ˙ø…“‘ π”√ update.exe Ω¯––∏¸–¬"<<endl;
-//	cout<<"https://mtools.makerlife.tk/M-Words-Book.zip"<<endl;
-	cout<<"«Î∂¡»Îµ•¥ £®∂¡»Î∏Ò Ω«Îº˚ Read Me.md£©£∫"<<endl;
+	cout<<"Ê¨¢Ëøé‰ΩøÁî® Wor\nÁâàÊú¨ v1.3.5"<<endl;
+	cout<<"Êú¨Á®ãÂ∫èÁî± Makerlife ÂºÄÂèë"<<endl;
+	int cnt_lastwords;
+	ifstream fin("data/last.txt");//ËØªÂÖ•‰πãÂâçÈîôËØØÁöÑÂçïËØç
+	if(fin.is_open())
+	{
+		fin>>n_lastwords;
+		string strtmp;getline(fin,strtmp);
+		cnt_lastwords=3*n_lastwords+2;
+		for(int i=2;i<=3*n_lastwords+1;i++)
+		{
+			if(i%3==2) getline(fin,word[(i+1)/3]);
+			if(i%3==0)
+			{
+				string tmpcx;
+				getline(fin,tmpcx);
+				if(!((tmpcx[0]>='a' && tmpcx[0]<='z') || (tmpcx[0]>='A' && tmpcx[0]<='Z')))
+				{
+					cx[i/3]=' ';
+					zw[i/3]=tmpcx;
+					i++;
+					continue;
+				}
+				else
+				{
+					cx[i/3]=tmpcx;
+				}
+			}
+			if(i%3==1) getline(fin,zw[(i-1)/3]);
+		}
+	}
+	cout<<"ËØ∑ËØªÂÖ•ÂçïËØçÔºàËØªÂÖ•Ê†ºÂºèËØ∑ËßÅ README.pdfÔºâÔºö"<<endl;
 	srand((int)time(0));
-//	file>>n;
 	n=read();
 	int tn=n;
 	if(n<4)
 	{
-		cout<<"¥ÌŒÛ: µ•¥  ˝¡ø≤ªƒ‹–°”⁄ 4\n¥ÌŒÛ¬Î: 1"<<endl;
-		cout<<"«Î∞¥ªÿ≥µÕÀ≥ˆ......"<<endl;
+		cout<<"ÈîôËØØ: ÂçïËØçÊï∞Èáè‰∏çËÉΩÂ∞è‰∫é 4\nÈîôËØØÁ†Å: 1"<<endl;
+		cout<<"ËØ∑ÊåâÂõûËΩ¶ÈÄÄÂá∫......"<<endl;
 		char ch=getchar();
 		return 0;
 	}
-//	fstream file;
-//	file.open("words.txt");
-	for(int i=2;i<=3*n+1;i++)
+	for(int i=cnt_lastwords;i<=3*n-1+cnt_lastwords;i++)//ËæìÂÖ•ÂçïËØçË°®
 	{
-		if(i%3==2) getline(cin,word[(i+1)/3]);/*file>>word[(i+1)/3];cin>>word[(i+1)/3];*/
+		if(i%3==2) getline(cin,word[(i+1)/3]);
 		if(i%3==0)
 		{
 			string tmpcx;
@@ -98,22 +119,29 @@ int main()
 			{
 				cx[i/3]=tmpcx;
 			}
-//			getline(cin,cx[i/3]);/*file>>word[i/3];cin>>cx[i/3];*/
 		}
-		if(i%3==1) getline(cin,zw[(i-1)/3]);/*file>>word[(i-1)/3];cin>>zw[(i-1)/3];*/
+		if(i%3==1) getline(cin,zw[(i-1)/3]);
 	}
-//	fclose;
+	n+=n_lastwords;
+
+	// cout<<n_lastwords<<endl;
+	// for(int i=1;i<=n;i++)
+	// {
+	// 	cout<<word[i]<<" "<<cx[i]<<" "<<zw[i]<<endl;
+	// }
+	// system("pause");
+
 	el;
-	cout<<"∂¡»Î≥…π¶"<<endl;// ‰»Îµ•¥ ±Ì
+	cout<<"ËØªÂÖ•ÊàêÂäü"<<endl;
 	usleep(500000);
 	system("cls");
-	cout<<"«Î ‰»Î“™±≥À–µƒµ•¥  ˝¡ø: ";
+	cout<<"ËØ∑ËæìÂÖ•Ë¶ÅËÉåËØµÁöÑÂçïËØçÊï∞Èáè: ";
 	int m;
 	m=read();
 	if(m>n)
 	{
-		cout<<"¥ÌŒÛ: Ã‚ƒø ˝¡ø≤ªƒ‹¥Û”⁄µ•¥  ˝¡ø\n¥ÌŒÛ¬Î: 2"<<endl;
-		cout<<"«Î∞¥ªÿ≥µÕÀ≥ˆ......"<<endl;
+		cout<<"ÈîôËØØ: È¢òÁõÆÊï∞Èáè‰∏çËÉΩÂ§ß‰∫éÂçïËØçÊï∞Èáè\nÈîôËØØÁ†Å: 2"<<endl;
+		cout<<"ËØ∑ÊåâÂõûËΩ¶ÈÄÄÂá∫......"<<endl;
 		char ch=getchar();
 		return 0;
 	}
@@ -123,343 +151,165 @@ int main()
 	{
 		t[i]=memsetn;
 	}
-//	cout<<t[1]<<endl;
-//	t[0]=rand()%n+1;
-
-	cout<<" ‰»Î 1 Œ™—°÷–Œƒ¥ “Â£¨ ‰»Î∆‰À˚Œ™—°‘Ò”¢”Ôµ•¥ : ";
-	int tmppp=read();
-	system("cls");
-	if(tmppp==1)
+	for(int i=0;i<m;)//Âá∫È¢ò
 	{
-		for(int i=0;i<m;)//≥ˆÃ‚
+		cout<<"Â∑≤Á≠îÂØπ "<<i<<"/"<<m<<" ‰∏™ÂçïËØç"<<endl;
+        cout<<"ËØ∑ÈÄâÊã©ÂçïËØç ";
+		while(1)//Á°Æ‰øù‰∏é‰πãÂâçÁöÑÈ¢òÁõÆ‰∏çÈáçÂ§ç
 		{
-			cout<<"“—¥∂‘ "<<i<<"/"<<m<<" ∏ˆµ•¥ "<<endl;
-	        cout<<"«Î—°‘Òµ•¥  ";
-	//		t[i]=rand()%n+1;
-			while(1)//»∑±£”Î÷Æ«∞µƒÃ‚ƒø≤ª÷ÿ∏¥
+			int f=0;
+			for(int j=0;j<i;j++)
 			{
-				int f=0;
-				for(int j=0;j<i;j++)
+				if(t[i]==t[j])
 				{
-					if(t[i]==t[j])
-					{
-						f=1;
-						break;
-					}
-				}
-				if(f==0) break;
-				t[i]=rand()%n+1;
-			}
-			cout<<word[t[i]];
-			int t1,t2,t3,t4;
-			int sj=rand()%4+1;
-			t1=rand()%n+1;//…˙≥…ABCD—°œÓ
-			t2=rand()%n+1;
-			t3=rand()%n+1;
-			t4=rand()%n+1;
-			if(sj==1)//»∑±£—°œÓ≤ª÷ÿ∏¥
-			{
-				t1=t[i];
-				while(t1==t2 || t1==t3 || t1==t4 || t2==t3 || t2==t4 || t3==t4)
-				{
-					t2=rand()%n+1;
-					t3=rand()%n+1;
-					t4=rand()%n+1;
-	//
-	//				bug(t1);
-	//				bug(t2);
-	//				bug(t3);
-	//				bug(t4);
-	//				el;
-	//
+					f=1;
+					break;
 				}
 			}
-			if(sj==2)
-			{
-				t2=t[i];
-				while(t1==t2 || t1==t3 || t1==t4 || t2==t3 || t2==t4 || t3==t4)
-				{
-					t1=rand()%n+1;
-					t3=rand()%n+1;
-					t4=rand()%n+1;
-	//
-	//				bug(t1);
-	//				bug(t2);
-	//				bug(t3);
-	//				bug(t4);
-	//				el;
-
-				}
-			}
-			if(sj==3)
-			{
-				t3=t[i];
-				while(t1==t2 || t1==t3 || t1==t4 || t2==t3 || t2==t4 || t3==t4)
-				{
-					t1=rand()%n+1;
-					t2=rand()%n+1;
-					t4=rand()%n+1;
-	//
-	//				bug(t1);
-	//				bug(t2);
-	//				bug(t3);
-	//				bug(t4);
-	//				el;
-
-				}
-			}
-			if(sj==4)
-			{
-				t4=t[i];
-				while(t1==t2 || t1==t3 || t1==t4 || t2==t3 || t2==t4 || t3==t4)
-				{
-					t2=rand()%n+1;
-					t3=rand()%n+1;
-					t1=rand()%n+1;
-	//
-	//				bug(t1);
-	//				bug(t2);
-	//				bug(t3);
-	//				bug(t4);
-	//				el;
-
-				}
-			}
-			cout<<" µƒ Õ“Â£®«Î ‰»Î¥Û–¥◊÷ƒ∏£©£∫"<<endl;
-			el;
-			if(cx[t1]==" ") cout<<"A "<<zw[t1]<<endl;
-			else cout<<"A "<<cx[t1]<<" "<<zw[t1]<<endl;
-			if(cx[t2]==" ") cout<<"B "<<zw[t2]<<endl;
-			else cout<<"B "<<cx[t2]<<" "<<zw[t2]<<endl;
-			if(cx[t3]==" ") cout<<"C "<<zw[t3]<<endl;
-			else cout<<"C "<<cx[t3]<<" "<<zw[t3]<<endl;
-			if(cx[t4]==" ") cout<<"D "<<zw[t4]<<endl;
-			else cout<<"D "<<cx[t4]<<" "<<zw[t4]<<endl;
-	//		cout<<"C "<<cx[t3]<<" "<<zw[t3]<<endl;
-	//		cout<<"D "<<cx[t4]<<" "<<zw[t4]<<endl;
-
-	//		cout<<char(sj+'A'-1)<<endl;
-
-			char input;
-			cin>>input;// ‰»Î—°œÓ
-			if('a'<=input && input<='z')
-			{
-				input=changeb(input);
-			}
-			if(!('A'<=input && input<='D'))
-			{
-				cout<<"¥ÌŒÛ:  ‰»Î≤ª∫œ∑®\n¥ÌŒÛ¬Î: 3"<<endl;
-				jieguo[i]=0;
-				system("pause");
-				system("cls");
-				continue;
-			}
-			if(input==char(sj+'A'-1))
-			{
-				cout<<"ªÿ¥’˝»∑£°"<<endl;
-				i++;
-				if(jieguo[i]!=0) jieguo[i]=1;
-				system("TIMEOUT /T 1");
-			}
-			else
-			{
-				cout<<"ªÿ¥¥ÌŒÛ£°"<<endl;
-				cout<<word[t[i]]<<" "<<cx[t[i]]<<" "<<zw[t[i]]<<endl;
-				jieguo[i]=0;
-				system("pause");
-			}
-			system("cls");
+			if(f==0) break;
+			t[i]=rand()%n+1;
 		}
+		cout<<word[t[i]];
+		int t1,t2,t3,t4;
+		int sj=rand()%4+1;
+		t1=rand()%n+1;//ÁîüÊàêABCDÈÄâÈ°π
+		t2=rand()%n+1;
+		t3=rand()%n+1;
+		t4=rand()%n+1;
+		if(sj==1)//Á°Æ‰øùÈÄâÈ°π‰∏çÈáçÂ§ç
+		{
+			t1=t[i];
+			while(t1==t2 || t1==t3 || t1==t4 || t2==t3 || t2==t4 || t3==t4)
+			{
+				t2=rand()%n+1;
+				t3=rand()%n+1;
+				t4=rand()%n+1;
+			}
+		}
+		if(sj==2)
+		{
+			t2=t[i];
+			while(t1==t2 || t1==t3 || t1==t4 || t2==t3 || t2==t4 || t3==t4)
+			{
+				t1=rand()%n+1;
+				t3=rand()%n+1;
+				t4=rand()%n+1;
+			}
+		}
+		if(sj==3)
+		{
+			t3=t[i];
+			while(t1==t2 || t1==t3 || t1==t4 || t2==t3 || t2==t4 || t3==t4)
+			{
+				t1=rand()%n+1;
+				t2=rand()%n+1;
+				t4=rand()%n+1;
+			}
+		}
+		if(sj==4)
+		{
+			t4=t[i];
+			while(t1==t2 || t1==t3 || t1==t4 || t2==t3 || t2==t4 || t3==t4)
+			{
+				t2=rand()%n+1;
+				t3=rand()%n+1;
+				t1=rand()%n+1;
+			}
+		}
+		cout<<" ÁöÑÈáä‰πâÔºö"<<endl;
+		el;
+		if(cx[t1]==" ") cout<<"A "<<zw[t1]<<endl;
+		else cout<<"A "<<cx[t1]<<" "<<zw[t1]<<endl;
+		if(cx[t2]==" ") cout<<"B "<<zw[t2]<<endl;
+		else cout<<"B "<<cx[t2]<<" "<<zw[t2]<<endl;
+		if(cx[t3]==" ") cout<<"C "<<zw[t3]<<endl;
+		else cout<<"C "<<cx[t3]<<" "<<zw[t3]<<endl;
+		if(cx[t4]==" ") cout<<"D "<<zw[t4]<<endl;
+		else cout<<"D "<<cx[t4]<<" "<<zw[t4]<<endl;
+		char input;
+		cin>>input;//ËæìÂÖ•ÈÄâÈ°π
+		if('a'<=input && input<='z')
+		{
+			input=changeb(input);
+		}
+		if(!('A'<=input && input<='D'))
+		{
+			cout<<"ÈîôËØØ: ËæìÂÖ•‰∏çÂêàÊ≥ï\nÈîôËØØÁ†Å: 3"<<endl;
+			jieguo[i]=0;
+			system("pause");
+			system("cls");
+			continue;
+		}
+		if(input==char(sj+'A'-1))
+		{
+			cout<<"ÂõûÁ≠îÊ≠£Á°ÆÔºÅ"<<endl;
+			i++;
+			if(jieguo[i]!=0) jieguo[i]=1;
+			system("TIMEOUT /T 1");
+		}
+		else
+		{
+			cout<<"ÂõûÁ≠îÈîôËØØÔºÅ"<<endl;
+			cout<<word[t[i]]<<" "<<cx[t[i]]<<" "<<zw[t[i]]<<endl;
+			jieguo[i]=0;
+			system("pause");
+		}
+		system("cls");
+	}
+	for(int i=0;i<m;i++)
+	{
+		if(jieguo[i]==0)
+		{
+			cwgs++;
+		}
+	}
+	if(cwgs!=0)
+	{
+		cout<<"‰ª•‰∏ã "<<cwgs<<" ‰∏™ÂçïËØçËøòÈúÄË¶ÅÂä†Âº∫ËÆ∞ÂøÜÔºö\n\n";
+		ofstream fout("data/last.txt");
+		if(!fout.is_open())
+		{
+			cerr<<"failed to open last.txt"<<endl;
+		}
+		fout<<cwgs<<endl;
 		for(int i=0;i<m;i++)
 		{
 			if(jieguo[i]==0)
 			{
-				cwgs++;
-			}
-		}
-		if(cwgs!=0)
-		{
-			cout<<"“‘œ¬ "<<cwgs<<" ∏ˆµ•¥ ªπ–Ë“™º”«øº«“‰£∫\n\n";
-			for(int i=0;i<m;i++)
-			{
-				if(jieguo[i]==0)
-				{
-					cout<<word[t[i]]<<" "<<cx[t[i]]<<" "<<zw[t[i]]<<endl;
-				}
-			}
-			cout<<"\n\n";
-		}
-		if(cwgs!=m)
-		{
-			cout<<"“‘œ¬ "<<m-cwgs<<" ∏ˆµ•¥ ’∆Œ’µƒ≤ª¥Ì£∫\n\n";
-			for(int i=0;i<m;i++)
-			{
-				if(jieguo[i]!=0)
-				{
-					cout<<word[t[i]]<<" "<<cx[t[i]]<<" "<<zw[t[i]]<<endl;
-				}
-			}
-			cout<<"\n\n";
-		}
-		cout<<"«Î∞¥ªÿ≥µÕÀ≥ˆ......"<<endl;
-		char ch=getchar();
-		ch=getchar();
-		return 0;
-	}
-	else
-	{
-		for(int i=0;i<m;)//≥ˆÃ‚
-		{
-			cout<<"“—¥∂‘ "<<i<<"/"<<m<<" ∏ˆµ•¥ "<<endl;
-	        cout<<"«Î—°‘Ò÷–ŒƒŒ™ ";
-			while(1)//»∑±£”Î÷Æ«∞µƒÃ‚ƒø≤ª÷ÿ∏¥
-			{
-				int f=0;
-				for(int j=0;j<i;j++)
-				{
-					if(t[i]==t[j])
-					{
-						f=1;
-						break;
-					}
-				}
-				if(f==0) break;
-				t[i]=rand()%n+1;
-			}
-			cout<<zw[t[i]];
-			int t1,t2,t3,t4;
-			int sj=rand()%4+1;
-			t1=rand()%n+1;//…˙≥…ABCD—°œÓ
-			t2=rand()%n+1;
-			t3=rand()%n+1;
-			t4=rand()%n+1;
-			if(sj==1)//»∑±£—°œÓ≤ª÷ÿ∏¥
-			{
-				t1=t[i];
-				while(t1==t2 || t1==t3 || t1==t4 || t2==t3 || t2==t4 || t3==t4)
-				{
-					t2=rand()%n+1;
-					t3=rand()%n+1;
-					t4=rand()%n+1;
-	//
-	//				bug(t1);
-	//				bug(t2);
-	//				bug(t3);
-	//				bug(t4);
-	//				el;
-	//
-				}
-			}
-			if(sj==2)
-			{
-				t2=t[i];
-				while(t1==t2 || t1==t3 || t1==t4 || t2==t3 || t2==t4 || t3==t4)
-				{
-					t1=rand()%n+1;
-					t3=rand()%n+1;
-					t4=rand()%n+1;
-				}
-			}
-			if(sj==3)
-			{
-				t3=t[i];
-				while(t1==t2 || t1==t3 || t1==t4 || t2==t3 || t2==t4 || t3==t4)
-				{
-					t1=rand()%n+1;
-					t2=rand()%n+1;
-					t4=rand()%n+1;
-				}
-			}
-			if(sj==4)
-			{
-				t4=t[i];
-				while(t1==t2 || t1==t3 || t1==t4 || t2==t3 || t2==t4 || t3==t4)
-				{
-					t2=rand()%n+1;
-					t3=rand()%n+1;
-					t1=rand()%n+1;
-				}
-			}
-			cout<<" µƒµ•¥ £®«Î ‰»Î¥Û–¥◊÷ƒ∏£©£∫"<<endl;
-			el;
-			if(cx[t1]==" ") cout<<"A "<<word[t1]<<endl;
-			else cout<<"A "<<word[t1]<<" "<<cx[t1]<<endl;
-			if(cx[t2]==" ") cout<<"B "<<word[t2]<<endl;
-			else cout<<"B "<<word[t2]<<" "<<cx[t2]<<endl;
-			if(cx[t3]==" ") cout<<"C "<<word[t3]<<endl;
-			else cout<<"C "<<word[t3]<<" "<<cx[t3]<<endl;
-			if(cx[t4]==" ") cout<<"D "<<word[t4]<<endl;
-			else cout<<"D "<<word[t4]<<" "<<cx[t4]<<endl;
-	//		cout<<"C "<<cx[t3]<<" "<<zw[t3]<<endl;
-	//		cout<<"D "<<cx[t4]<<" "<<zw[t4]<<endl;
-
-	//		cout<<char(sj+'A'-1)<<endl;
-
-			char input;
-			cin>>input;// ‰»Î—°œÓ
-			if('a'<=input && input<='z')
-			{
-				input=changeb(input);
-			}
-			if(!('A'<=input && input<='D'))
-			{
-				cout<<"¥ÌŒÛ:  ‰»Î≤ª∫œ∑®\n¥ÌŒÛ¬Î: 3"<<endl;
-				jieguo[i]=0;
-				system("pause");
-				system("cls");
-				continue;
-			}
-			if(input==char(sj+'A'-1))
-			{
-				cout<<"ªÿ¥’˝»∑£°"<<endl;
-				i++;
-				if(jieguo[i]!=0) jieguo[i]=1;
-				system("TIMEOUT /T 1");
-			}
-			else
-			{
-				cout<<"ªÿ¥¥ÌŒÛ£°"<<endl;
 				cout<<word[t[i]]<<" "<<cx[t[i]]<<" "<<zw[t[i]]<<endl;
-				jieguo[i]=0;
-				system("pause");
+				// file_process(2,word[t[i]],cx[t[i]],zw[t[i]]);
+				fout<<word[t[i]]<<endl;
+				fout<<cx[t[i]]<<endl;
+				fout<<zw[t[i]]<<endl;
 			}
-			system("cls");
 		}
+		fout.close();
+		cout<<"\n\n";
+	}
+	if(cwgs!=m)
+	{
+		cout<<"‰ª•‰∏ã "<<m-cwgs<<" ‰∏™ÂçïËØçÊéåÊè°ÁöÑ‰∏çÈîôÔºö\n\n";
 		for(int i=0;i<m;i++)
 		{
-			if(jieguo[i]==0)
+			if(jieguo[i]!=0)
 			{
-				cwgs++;
+				cout<<word[t[i]]<<" "<<cx[t[i]]<<" "<<zw[t[i]]<<endl;
 			}
 		}
-		if(cwgs!=0)
+		cout<<"\n\n";
+		if(cwgs==0)
 		{
-			cout<<"“‘œ¬ "<<cwgs<<" ∏ˆµ•¥ ªπ–Ë“™º”«øº«“‰£∫\n\n";
-			for(int i=0;i<m;i++)
+			ofstream fout("data/last.txt");
+			if(!fout.is_open())
 			{
-				if(jieguo[i]==0)
-				{
-					cout<<word[t[i]]<<" "<<cx[t[i]]<<" "<<zw[t[i]]<<endl;
-				}
+				cerr<<"failed to open last.txt"<<endl;
 			}
-			cout<<"\n\n";
+			fout<<cwgs<<endl;
 		}
-		if(cwgs!=m)
-		{
-			cout<<"“‘œ¬ "<<m-cwgs<<" ∏ˆµ•¥ ’∆Œ’µƒ≤ª¥Ì£∫\n\n";
-			for(int i=0;i<m;i++)
-			{
-				if(jieguo[i]!=0)
-				{
-					cout<<word[t[i]]<<" "<<cx[t[i]]<<" "<<zw[t[i]]<<endl;
-				}
-			}
-			cout<<"\n\n";
-		}
-		cout<<"«Î∞¥ªÿ≥µÕÀ≥ˆ......"<<endl;
-		char ch=getchar();
-		ch=getchar();
-		return 0;
 	}
+	cout<<"ËØ∑ÊåâÂõûËΩ¶ÈÄÄÂá∫......"<<endl;
+	char ch=getchar();
+	ch=getchar();
+	return 0;
 }
 
