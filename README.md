@@ -70,6 +70,14 @@ n.
 
 由于某些原因，实验室版本已取消。
 
+## 0x04 开发
+
+```bash
+git clone https://github.com/amakerlife/Wor
+cd Wor
+g++ main.cpp -o wor.exe -std=c++14 -m64 -static-libgcc -fexec-charset=GBK
+```
+
 ## 0x3f 其他
 
 在文件夹中，可能会看到`.mts`后缀的文件，这是程序运行所必须的文件，删除后**会造成程序无法运行甚至系统崩溃！**
